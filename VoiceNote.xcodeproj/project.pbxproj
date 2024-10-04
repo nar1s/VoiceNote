@@ -6,17 +6,29 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXFileReference section */
-		F5A5E0ED2CAE30FF00830E22 /* VoiceNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
-/* End PBXFileReference section */
+/* Begin PBXBuildFile section */
+		F5A3CF172CB06D5C00EC5325 /* NoteHighlightsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A3CF162CB06D5300EC5325 /* NoteHighlightsModel.swift */; };
+		F5A5E1162CAF4BCB00830E22 /* VoiceNoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5E1142CAF4BCB00830E22 /* VoiceNoteApp.swift */; };
+		F5A5E1172CAF4BCB00830E22 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5E10F2CAF4BCB00830E22 /* MainView.swift */; };
+		F5A5E1182CAF4BCB00830E22 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5A5E10D2CAF4BCB00830E22 /* Preview Assets.xcassets */; };
+		F5A5E1192CAF4BCB00830E22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5A5E1122CAF4BCB00830E22 /* Assets.xcassets */; };
+		F5A5E11D2CAF59ED00830E22 /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5E11C2CAF59E800830E22 /* NoteModel.swift */; };
+		F5A5E11F2CAF5A3200830E22 /* NoteCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5E11E2CAF5A2C00830E22 /* NoteCategory.swift */; };
+		F5A5E1222CAF5CB500830E22 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5E1212CAF5CB200830E22 /* NoteView.swift */; };
+/* End PBXBuildFile section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		F5A5E0EF2CAE30FF00830E22 /* VoiceNote */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = VoiceNote;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
+/* Begin PBXFileReference section */
+		F5A3CF162CB06D5300EC5325 /* NoteHighlightsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteHighlightsModel.swift; sourceTree = "<group>"; };
+		F5A5E0ED2CAE30FF00830E22 /* VoiceNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5A5E10D2CAF4BCB00830E22 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F5A5E10F2CAF4BCB00830E22 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		F5A5E1122CAF4BCB00830E22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F5A5E1132CAF4BCB00830E22 /* VoiceNote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VoiceNote.entitlements; sourceTree = "<group>"; };
+		F5A5E1142CAF4BCB00830E22 /* VoiceNoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceNoteApp.swift; sourceTree = "<group>"; };
+		F5A5E11C2CAF59E800830E22 /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
+		F5A5E11E2CAF5A2C00830E22 /* NoteCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCategory.swift; sourceTree = "<group>"; };
+		F5A5E1212CAF5CB200830E22 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F5A5E0EA2CAE30FF00830E22 /* Frameworks */ = {
@@ -32,7 +44,7 @@
 		F5A5E0E42CAE30FF00830E22 = {
 			isa = PBXGroup;
 			children = (
-				F5A5E0EF2CAE30FF00830E22 /* VoiceNote */,
+				F5A5E1152CAF4BCB00830E22 /* VoiceNote */,
 				F5A5E0EE2CAE30FF00830E22 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +55,62 @@
 				F5A5E0ED2CAE30FF00830E22 /* VoiceNote.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F5A5E10C2CAF4BCB00830E22 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F5A3CF162CB06D5300EC5325 /* NoteHighlightsModel.swift */,
+				F5A5E11E2CAF5A2C00830E22 /* NoteCategory.swift */,
+				F5A5E11C2CAF59E800830E22 /* NoteModel.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F5A5E10E2CAF4BCB00830E22 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F5A5E10D2CAF4BCB00830E22 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F5A5E1102CAF4BCB00830E22 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F5A5E10F2CAF4BCB00830E22 /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		F5A5E1112CAF4BCB00830E22 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				F5A5E1202CAF5CAC00830E22 /* Note */,
+				F5A5E1102CAF4BCB00830E22 /* Main */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		F5A5E1152CAF4BCB00830E22 /* VoiceNote */ = {
+			isa = PBXGroup;
+			children = (
+				F5A5E10C2CAF4BCB00830E22 /* Common */,
+				F5A5E10E2CAF4BCB00830E22 /* Preview Content */,
+				F5A5E1112CAF4BCB00830E22 /* Screens */,
+				F5A5E1122CAF4BCB00830E22 /* Assets.xcassets */,
+				F5A5E1132CAF4BCB00830E22 /* VoiceNote.entitlements */,
+				F5A5E1142CAF4BCB00830E22 /* VoiceNoteApp.swift */,
+			);
+			path = VoiceNote;
+			sourceTree = "<group>";
+		};
+		F5A5E1202CAF5CAC00830E22 /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				F5A5E1212CAF5CB200830E22 /* NoteView.swift */,
+			);
+			path = Note;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +127,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				F5A5E0EF2CAE30FF00830E22 /* VoiceNote */,
 			);
 			name = VoiceNote;
 			packageProductDependencies = (
@@ -109,6 +174,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5A5E1182CAF4BCB00830E22 /* Preview Assets.xcassets in Resources */,
+				F5A5E1192CAF4BCB00830E22 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +186,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5A3CF172CB06D5C00EC5325 /* NoteHighlightsModel.swift in Sources */,
+				F5A5E11F2CAF5A3200830E22 /* NoteCategory.swift in Sources */,
+				F5A5E1222CAF5CB500830E22 /* NoteView.swift in Sources */,
+				F5A5E11D2CAF59ED00830E22 /* NoteModel.swift in Sources */,
+				F5A5E1162CAF4BCB00830E22 /* VoiceNoteApp.swift in Sources */,
+				F5A5E1172CAF4BCB00830E22 /* MainView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +323,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"VoiceNote/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = VoiceNote;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -260,7 +335,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
@@ -268,10 +343,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = PavelKuznetsov.VoiceNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = 1;
 				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
@@ -287,6 +363,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"VoiceNote/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = VoiceNote;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -297,7 +375,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
@@ -305,10 +383,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = PavelKuznetsov.VoiceNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = 1;
 				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
