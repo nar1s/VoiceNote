@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F515F7F32CB34392008A6669 /* ASRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515F7F22CB3438B008A6669 /* ASRError.swift */; };
 		F5A3CF172CB06D5C00EC5325 /* NoteHighlightsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A3CF162CB06D5300EC5325 /* NoteHighlightsModel.swift */; };
+		F5A3CF1C2CB0873600EC5325 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A3CF1B2CB0873400EC5325 /* RecordView.swift */; };
+		F5A3CF202CB0910700EC5325 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A3CF1F2CB0910200EC5325 /* Route.swift */; };
+		F5A3CF282CB0AE5400EC5325 /* ASRModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A3CF272CB0AE3C00EC5325 /* ASRModel.swift */; };
+		F5A3CF2C2CB31ACA00EC5325 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A3CF2B2CB31AC500EC5325 /* TimeFormatter.swift */; };
 		F5A5E1162CAF4BCB00830E22 /* VoiceNoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5E1142CAF4BCB00830E22 /* VoiceNoteApp.swift */; };
 		F5A5E1172CAF4BCB00830E22 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5E10F2CAF4BCB00830E22 /* MainView.swift */; };
 		F5A5E1182CAF4BCB00830E22 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5A5E10D2CAF4BCB00830E22 /* Preview Assets.xcassets */; };
@@ -18,7 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F515F7F22CB3438B008A6669 /* ASRError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASRError.swift; sourceTree = "<group>"; };
 		F5A3CF162CB06D5300EC5325 /* NoteHighlightsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteHighlightsModel.swift; sourceTree = "<group>"; };
+		F5A3CF1B2CB0873400EC5325 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
+		F5A3CF1F2CB0910200EC5325 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		F5A3CF212CB0AD0400EC5325 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F5A3CF272CB0AE3C00EC5325 /* ASRModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASRModel.swift; sourceTree = "<group>"; };
+		F5A3CF2B2CB31AC500EC5325 /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
 		F5A5E0ED2CAE30FF00830E22 /* VoiceNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5A5E10D2CAF4BCB00830E22 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F5A5E10F2CAF4BCB00830E22 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -41,6 +52,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F5A3CF1A2CB0872E00EC5325 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				F5A3CF1B2CB0873400EC5325 /* RecordView.swift */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		F5A3CF262CB0AE3500EC5325 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F5A3CF272CB0AE3C00EC5325 /* ASRModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F5A5E0E42CAE30FF00830E22 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +87,9 @@
 		F5A5E10C2CAF4BCB00830E22 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F515F7F22CB3438B008A6669 /* ASRError.swift */,
+				F5A3CF2B2CB31AC500EC5325 /* TimeFormatter.swift */,
+				F5A3CF1F2CB0910200EC5325 /* Route.swift */,
 				F5A3CF162CB06D5300EC5325 /* NoteHighlightsModel.swift */,
 				F5A5E11E2CAF5A2C00830E22 /* NoteCategory.swift */,
 				F5A5E11C2CAF59E800830E22 /* NoteModel.swift */,
@@ -86,6 +116,7 @@
 		F5A5E1112CAF4BCB00830E22 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				F5A3CF1A2CB0872E00EC5325 /* Record */,
 				F5A5E1202CAF5CAC00830E22 /* Note */,
 				F5A5E1102CAF4BCB00830E22 /* Main */,
 			);
@@ -95,6 +126,8 @@
 		F5A5E1152CAF4BCB00830E22 /* VoiceNote */ = {
 			isa = PBXGroup;
 			children = (
+				F5A3CF262CB0AE3500EC5325 /* Models */,
+				F5A3CF212CB0AD0400EC5325 /* Info.plist */,
 				F5A5E10C2CAF4BCB00830E22 /* Common */,
 				F5A5E10E2CAF4BCB00830E22 /* Preview Content */,
 				F5A5E1112CAF4BCB00830E22 /* Screens */,
@@ -189,7 +222,12 @@
 				F5A3CF172CB06D5C00EC5325 /* NoteHighlightsModel.swift in Sources */,
 				F5A5E11F2CAF5A3200830E22 /* NoteCategory.swift in Sources */,
 				F5A5E1222CAF5CB500830E22 /* NoteView.swift in Sources */,
+				F5A3CF2C2CB31ACA00EC5325 /* TimeFormatter.swift in Sources */,
+				F515F7F32CB34392008A6669 /* ASRError.swift in Sources */,
+				F5A3CF1C2CB0873600EC5325 /* RecordView.swift in Sources */,
 				F5A5E11D2CAF59ED00830E22 /* NoteModel.swift in Sources */,
+				F5A3CF282CB0AE5400EC5325 /* ASRModel.swift in Sources */,
+				F5A3CF202CB0910700EC5325 /* Route.swift in Sources */,
 				F5A5E1162CAF4BCB00830E22 /* VoiceNoteApp.swift in Sources */,
 				F5A5E1172CAF4BCB00830E22 /* MainView.swift in Sources */,
 			);
@@ -321,10 +359,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VoiceNote/Preview Content\"";
+				DEVELOPMENT_TEAM = G3332Q8MVD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VoiceNote/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = VoiceNote;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Приложение использует микрофон для записи аудиозаметок";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Приложение использует технологию распознавания речи для формирования тесктовых заметок";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -361,10 +403,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VoiceNote/Preview Content\"";
+				DEVELOPMENT_TEAM = G3332Q8MVD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VoiceNote/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = VoiceNote;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Приложение использует микрофон для записи аудиозаметок";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Приложение использует технологию распознавания речи для формирования тесктовых заметок";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

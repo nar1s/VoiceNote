@@ -9,10 +9,14 @@
 import SwiftUI
 
 struct NoteView: View {
-    // MARK: Public properties
+    // MARK: - Environment
+    @Environment(\.dismiss) var dismiss
+    // MARK: - Public properties
     @Binding var noteModel: NoteModel
-    // MARK: Private properties
+    // MARK: - Private properties
     @State private var isPlaying: Bool = false
+    var isNewlyCreated: Bool = false
+    var finishButtonAction: (() -> ())?
     // MARK: View body
     var body: some View {
         Form {
@@ -64,6 +68,16 @@ struct NoteView: View {
             } header: {
                 Text("ТЕКСТ ЗАМЕТКИ")
             }
+        }
+        .navigationBarBackButtonHidden(isNewlyCreated)
+        if isNewlyCreated {
+            Button("Сохранить заметку") {
+                finishButtonAction?()
+            }
+            .foregroundStyle(.white)
+            .padding()
+            .background(.gray)
+            .clipShape(.rect(cornerRadius: 20))
         }
     }
 }

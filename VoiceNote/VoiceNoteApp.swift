@@ -10,9 +10,13 @@ import SwiftUI
 
 @main
 struct VoiceNoteApp: App {
+    // MARK: - Shared models
+    @StateObject var asrModel = ASRModel()
+    
     var body: some Scene {
         WindowGroup {
             MainView()
+                .environmentObject(asrModel)
         }
     }
 }
