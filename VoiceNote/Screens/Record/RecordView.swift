@@ -12,43 +12,89 @@ struct RecordView: View {
     // MARK: - Environment
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject private var asrModel: ASRModel
+    @Environment(\.managedObjectContext) var managedObjectContext
     
     // MARK: - Private properties
     @State private var needToShowLoader: Bool = false
     @State private var needToShowAlert: Bool = false
+    @State private var needToShowTimePicker: Bool = false
     @State private var path = NavigationPath()
+    @State private var selectedHighlightModelIndex: Int?
+    @State private var isHighlighting: Bool = false
+    @State private var highlightsModel: [NoteHighlightsModel] = []
     
     // MARK: - View body
     var body: some View {
         NavigationStack(path: $path) {
             VStack {
-                Text( TimeFormatter.convertToTimeString($asrModel.currentRecordTime.wrappedValue))
-                    .font(.title    )
+                Text($asrModel.currentRecordTime.wrappedValue.toTimeString())
+                    .font(.title)
                 Spacer()
                 Image(systemName: "waveform")
                     .resizable()
-                    .frame(width: 300, height: 300)
+                    .frame(width: 300, height: 150)
                     .padding()
                 Spacer()
                 HStack(spacing: 120) {
-                    Button {
-                        // TODO: add highlight
-                    } label: {
-                        Image(systemName: "pencil.tip.crop.circle.badge.plus")
-                            .resizable()
-                            .frame(width: 70, height: 60)
-                            .foregroundStyle(.black)
+                    if !isHighlighting {
+                        Button {
+                            startHighlightFromCurrentTs()
+                        } label: {
+                            Image(systemName: "pencil.tip.crop.circle.badge.plus")
+                                .resizable()
+                                .frame(width: 70, height: 60)
+                        }
+                    } else {
+                        Button {
+                            stopHighlight()
+                        } label: {
+                            Image(systemName: "pencil.tip.crop.circle.badge.arrow.forward")
+                                .resizable()
+                                .frame(width: 70, height: 60)
+                        }
                     }
+
                     Button {
-                        // TODO: add stopresume
+                        asrModel.playPauseRecordingVoice()
                     } label: {
-                        Image(systemName: "pause.circle")
+                        Image(systemName: asrModel.isRecording ? "pause.circle" : "play.circle")
                             .resizable()
                             .frame(width: 60, height: 60)
-                            .foregroundStyle(.black)
                     }
                 }
                 Spacer()
+                if !highlightsModel.isEmpty {
+                    VStack {
+                        Text("Временные метки")
+                            .font(.title2)
+                            .padding(.top)
+                        List(highlightsModel.indices, id: \.self) { index in
+                            HStack {
+                                TextField("Название интервала", text: $highlightsModel[index].title)
+                                Text(highlightsModel[index].startTs.totalTime)
+                                    .onTapGesture {
+                                        needToShowTimePicker = true
+                                    }
+                                if !highlightsModel[index].endTs.isEmpty {
+                                    Image(systemName: "arrowshape.right")
+                                    Text($highlightsModel[index].endTs.wrappedValue.totalTime)
+                                        .onTapGesture {
+                                            needToShowTimePicker = true
+                                        }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .navigationDestination(for: Note.self) { note in
+                NoteView(noteModel: note) {
+                    dismiss()
+                }
+            }
+            .navigationTitle("Новая заметка")
+            .navigationBarTitleDisplayMode(.inline)
+            .safeAreaInset(edge: .bottom) {
                 Button("Остановить запись") {
                     needToShowLoader = true
                     stopRecording()
@@ -58,18 +104,10 @@ struct RecordView: View {
                 .background(.red)
                 .clipShape(.rect(cornerRadius: 20))
             }
-            .navigationTitle("Новая заметка")
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationDestination(for: NoteModel.self) { model in
-                NoteView(noteModel: .constant(model),isNewlyCreated: true) {
-                    dismiss()
-                }
-            }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
                         stopRecording()
-                        dismiss()
                     } label: {
                         Image(systemName: "plus")
                             .foregroundStyle(.black)
@@ -109,24 +147,72 @@ struct RecordView: View {
                 .background(.ultraThinMaterial)
             }
         }
+        .sheet(isPresented: $needToShowTimePicker) {
+            CustomTimePickerView(
+                higlightModel: $highlightsModel[selectedHighlightModelIndex ?? 0],
+            recordTime: asrModel.currentRecordTime
+            )
+                .presentationDetents([.fraction(0.25)])
+        }
     }
     // MARK: - Private methods
     private func stopRecording() {
+        stopHighlight()
         do {
             try asrModel.stopRecordingVoice()
-            asrModel.recognizeAudio { result in
+            asrModel.recognizeAudio(highlights: highlightsModel) { result in
                 switch result {
-                case .success(let recognizedText):
-                    // TODO: передать URL
-                    path.append(NoteModel(name: "", text: AttributedString(recognizedText), categoty: .education, audioFilePath: nil, highligts: []))
+                case .success(let result):
+                    print("DEBUG: SAVE TO CORE DATA \(result.filePath)")
+                    let noteModel = Note(context: managedObjectContext)
+                    noteModel.name = "Новая заметка"
+                    noteModel.text = result.formattedText
+                    noteModel.noteID = UUID()
+                    noteModel.highlights = convertHightlightsToData(highlightsModel)
+                    noteModel.relativeFilePath = result.filePath
+                    noteModel.created = Date.now
+                    path.append(noteModel)
                     needToShowLoader = false
                 case .failure:
                     needToShowAlert = true
                 }
             }
         } catch {
-            print(error.localizedDescription)
+            print("DEBUG: failed to stop recording: \(error.localizedDescription)")
         }
+    }
+    
+    private func startHighlightFromCurrentTs() {
+        let currentTs = asrModel.currentRecordTime
+        withAnimation {
+            highlightsModel.append(
+                .init(
+                    title: "Новый интервал",
+                    startTs: currentTs.convertToTimeComponents(),
+                    endTs: .init()
+                )
+            )
+            isHighlighting = true
+        }
+    }
+    
+    private func stopHighlight() {
+        let currentTs = asrModel.currentRecordTime
+        withAnimation {
+            if !highlightsModel.isEmpty {
+                let lastIndex = highlightsModel.count - 1
+                if highlightsModel[lastIndex].endTs.isEmpty {
+                    highlightsModel[lastIndex].endTs = currentTs.convertToTimeComponents()
+                }
+            }
+            isHighlighting = false
+        }
+    }
+
+    private func convertHightlightsToData(_ highlights: [NoteHighlightsModel]) -> Data {
+        let encoder = JSONEncoder()
+        let highlightsData = try? encoder.encode(highlights)
+        return highlightsData ?? Data()
     }
 }
 

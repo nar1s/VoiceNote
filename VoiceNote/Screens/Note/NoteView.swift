@@ -7,81 +7,199 @@
 
 
 import SwiftUI
+import AVFoundation
 
 struct NoteView: View {
     // MARK: - Environment
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var notesManager: NotesManager
+    @EnvironmentObject var audioManager: AudioManager
+
     // MARK: - Public properties
-    @Binding var noteModel: NoteModel
-    // MARK: - Private properties
-    @State private var isPlaying: Bool = false
-    var isNewlyCreated: Bool = false
+    @State var noteModel: Note
+    @State private var selectedCategory: String = "Личное"
+    @State private var noteTitle: String = ""
+    @State private var isNewlyCreated: Bool = false
+    @State private var noteText: NSAttributedString = .init(string: "")
+    @State private var isFocused: Bool = false
+    @State private var isShareSheetPresented = false
+    @State private var shareItems: [Any] = []
     var finishButtonAction: (() -> ())?
+    
+    // MARK: - Private properties
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.name, order: .reverse)])
+    private var categories: FetchedResults<Category>
+
     // MARK: View body
     var body: some View {
-        Form {
-            Section {
-                TextField("Введите название", text: $noteModel.name)
-            } header: {
-                Text("НАЗВАНИЕ")
-            }
-            Section {
-                HStack(spacing: 20) {
-                    Toggle(isOn: $isPlaying) {
-                        Image(systemName: isPlaying ? "pause.circle" : "play.circle")
+        ScrollViewReader { scrollViewProxy in
+            Form {
+                Section {
+                    TextField("Введите название", text: $noteTitle)
+                } header: {
+                    Text("НАЗВАНИЕ")
+                }
+                Section {
+                    HStack(spacing: 20) {
+                        Button {
+                            playPauseAudio()
+                        } label: {
+                            Image(systemName: audioManager.isPlaying ? "pause.circle" : "play.circle")
+                                .resizable()
+                                .frame(width: 40, height: 40)
+                        }
+                        Image(systemName: "waveform")
                             .resizable()
-                            .frame(width: 40, height: 40)
                     }
-                    .toggleStyle(.button)
-                    Image(systemName: "waveform")
-                        .resizable()
+                } header: {
+                    Text("АУДИОФАЙЛ")
                 }
-            } header: {
-                Text("АУДИОФАЙЛ")
-            }
-            Section {
-                Picker("NoteCategory", selection: $noteModel.categoty) {
-                    ForEach(NoteCategory.allCases) { category in
-                        Text(category.rawValue)
-                    }
-                }
-            } header: {
-                Text("КАТЕГОРИЯ")
-            }
-            Section {
-                List(noteModel.highligts, id: \.self) { highlight in
-                    HStack {
-                        Text(highlight.title + ":")
-                        Spacer()
-                        HStack {
-                            Text(highlight.startTs.formatted() + " c")
-                            Image(systemName: "arrowshape.right")
-                            Text(highlight.endTs.formatted() + " c")
+                Section {
+                    Picker("Категория", selection: $selectedCategory) {
+                        ForEach(categories, id: \.self) { category in
+                            Text(category.name ?? "").tag(category.name ?? "")
                         }
                     }
+                } header: {
+                    Text("КАТЕГОРИЯ")
                 }
-            } header: {
-                Text("ВРЕМЕННЫЕ МЕТКИ")
+                Section {
+                    List(getHighlights(), id: \.self) { highlight in
+                        HStack {
+                            Text(highlight.title + ":")
+                            Spacer()
+                            HStack {
+                                Text(highlight.startTs.totalTime)
+                                Image(systemName: "arrowshape.right")
+                                Text(highlight.endTs.totalTime)
+                            }
+                        }
+                    }
+                } header: {
+                    Text("ВРЕМЕННЫЕ МЕТКИ")
+                }
+                Section {
+                    CustomTextField(attributedString: $noteText, isFocused: $isFocused)
+                        .frame(height: 150)
+                        .id("noteText")
+                        .gesture(
+                            DragGesture()
+                                .onEnded { value in
+                                    if value.translation.height > 50 {
+                                        isFocused = false
+//                                        UIApplication.shared.sendAction(
+//                                            #selector(UIResponder.resignFirstResponder),
+//                                            to: nil,
+//                                            from: nil,
+//                                            for: nil
+//                                        )
+                                    } else if value.translation.height < -50 {
+                                        isFocused = false
+//                                        UIApplication.shared.sendAction(
+//                                            #selector(UIResponder.resignFirstResponder),
+//                                            to: nil,
+//                                            from: nil, for: nil
+//                                        )
+                                    }
+                                }
+                        )
+                } header: {
+                    Text("ТЕКСТ ЗАМЕТКИ")
+                }
+                HStack(alignment: .center) {
+                    Spacer()
+                    Button("Сохранить заметку") {
+                        saveNoteToStorage()
+                        if finishButtonAction == nil {
+                            dismiss()
+                        } else {
+                            finishButtonAction?()
+                        }
+                    }
+                    .padding()
+                    .clipShape(.rect(cornerRadius: 20))
+                    Spacer()
+                }
             }
-            Section {
-                Text(noteModel.text)
-            } header: {
-                Text("ТЕКСТ ЗАМЕТКИ")
+            .onChange(of: isFocused) { focused in
+                if focused {
+                    withAnimation {
+                        scrollViewProxy.scrollTo("noteText", anchor: .top)
+                    }
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Menu {
+                        if let text = noteModel.text, let title = noteModel.name {
+                            Button("Экспорт в TXT") {
+                                guard
+                                    let url = FileExportManager.exportToTXT(text, title)
+                                else { return }
+                                shareItems = [url]
+                                isShareSheetPresented = true
+                            }
+                            Button("Экспорт в PDF") {
+                                guard
+                                    let url = FileExportManager.exportToPDF(text, title)
+                                else { return}
+                                shareItems = [url]
+                                isShareSheetPresented = true
+                            }
+                        }
+                    } label: {
+                        Image(systemName: "square.and.arrow.up.fill")
+                            .imageScale(.large)
+                            .foregroundStyle(.black)
+                    }
+                }
             }
         }
         .navigationBarBackButtonHidden(isNewlyCreated)
-        if isNewlyCreated {
-            Button("Сохранить заметку") {
-                finishButtonAction?()
-            }
-            .foregroundStyle(.white)
-            .padding()
-            .background(.gray)
-            .clipShape(.rect(cornerRadius: 20))
+        .onAppear {
+            updateView()
+            guard let text = noteModel.text else { return }
+            noteText = text
         }
+        .sheet(isPresented: $isShareSheetPresented) {
+            ActivityViewController(activityItems: $shareItems)
+         }
+        .onDisappear {
+            audioManager.resetAudioSession()
+        }
+        .task {
+            let timeInterval = Date.now.timeIntervalSince(noteModel.created ?? Date())
+            isNewlyCreated = timeInterval <= 1
+            guard let filePath = noteModel.relativeFilePath else { return }
+            audioManager.configureAudioPlayer(with: filePath)
+        }
+    }
+    
+    private func playPauseAudio() {
+        audioManager.playPauseAudio()
+    }
+
+    private func saveNoteToStorage() {
+        noteModel.text = noteText
+        noteModel.name = noteTitle
+        noteModel.category = categories.first(where: { $0.name == selectedCategory })
+        notesManager.save()
+    }
+    
+    private func getHighlights() -> [NoteHighlightsModel] {
+        let decoder = JSONDecoder()
+        let highlights = try? decoder.decode([NoteHighlightsModel].self, from: noteModel.highlights ?? Data())
+        return highlights ?? []
+    }
+    
+    private func updateView() {
+        noteTitle = noteModel.name ?? ""
+        selectedCategory = noteModel.category?.name ?? ""
     }
 }
 
 #Preview {
-    NoteView(noteModel: .constant(NoteModel.mockObject))
+    let note = Note.mockObject(context: PersistentConfigurator.preview.mainContext)
+    NoteView(noteModel: note)
+        .environmentObject(AudioManager())
 }

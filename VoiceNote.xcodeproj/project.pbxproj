@@ -7,38 +7,108 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F515F7F32CB34392008A6669 /* ASRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515F7F22CB3438B008A6669 /* ASRError.swift */; };
+		F50E4CE82CC52BA500BBBE73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50E4CE72CC52BA200BBBE73 /* AppDelegate.swift */; };
+		F515F81F2CB37F4B008A6669 /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515F81E2CB37F45008A6669 /* TimePicker.swift */; };
+		F515F8242CB3856E008A6669 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515F8232CB38568008A6669 /* Array+Extension.swift */; };
+		F51C34042CBD7D38005A92A2 /* ASRModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51C34002CBD7D38005A92A2 /* ASRModel.swift */; };
+		F51C34052CBD7D38005A92A2 /* ASRResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51C34012CBD7D38005A92A2 /* ASRResult.swift */; };
+		F51C34062CBD7D38005A92A2 /* ASRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51C33FF2CBD7D38005A92A2 /* ASRError.swift */; };
+		F51C340B2CBD7DCF005A92A2 /* NoteData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F51C34092CBD7DCF005A92A2 /* NoteData.xcdatamodeld */; };
+		F51C340D2CBD8035005A92A2 /* NotesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51C340C2CBD8025005A92A2 /* NotesManager.swift */; };
+		F52ECFE92CBE58FB004E7704 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52ECFE82CBE58F6004E7704 /* AudioManager.swift */; };
+		F52ECFEC2CBE6CAB004E7704 /* FolderCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52ECFEB2CBE6CA5004E7704 /* FolderCreateView.swift */; };
+		F52ECFEE2CBE7AD6004E7704 /* FolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52ECFED2CBE7AD2004E7704 /* FolderView.swift */; };
+		F52ECFF12CBE99C9004E7704 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52ECFF02CBE99B3004E7704 /* CustomTextField.swift */; };
+		F56048782CC413380001A448 /* NotesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51C340C2CBD8025005A92A2 /* NotesManager.swift */; };
+		F56048792CC413400001A448 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52ECFF02CBE99B3004E7704 /* CustomTextField.swift */; };
+		F560487A2CC413480001A448 /* FileExportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A6101E2CC3A73100C4A386 /* FileExportManager.swift */; };
+		F560487B2CC413530001A448 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A610222CC3C43D00C4A386 /* ActivityViewController.swift */; };
+		F560487C2CC4135A0001A448 /* NoteHighlightsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A3CF162CB06D5300EC5325 /* NoteHighlightsModel.swift */; };
+		F560487F2CC416D40001A448 /* ASRResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51C34012CBD7D38005A92A2 /* ASRResult.swift */; };
+		F56048802CC416E40001A448 /* ASRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51C33FF2CBD7D38005A92A2 /* ASRError.swift */; };
+		F56048822CC44A460001A448 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56048812CC44A460001A448 /* ShareViewController.swift */; };
+		F574E7882CB3B0EF000BF597 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F574E7872CB3B0EB000BF597 /* Int+Extensions.swift */; };
+		F59EF7972CBFB6F600B3E307 /* AddNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59EF7962CBFB6F600B3E307 /* AddNotesView.swift */; };
 		F5A3CF172CB06D5C00EC5325 /* NoteHighlightsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A3CF162CB06D5300EC5325 /* NoteHighlightsModel.swift */; };
 		F5A3CF1C2CB0873600EC5325 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A3CF1B2CB0873400EC5325 /* RecordView.swift */; };
-		F5A3CF202CB0910700EC5325 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A3CF1F2CB0910200EC5325 /* Route.swift */; };
-		F5A3CF282CB0AE5400EC5325 /* ASRModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A3CF272CB0AE3C00EC5325 /* ASRModel.swift */; };
-		F5A3CF2C2CB31ACA00EC5325 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A3CF2B2CB31AC500EC5325 /* TimeFormatter.swift */; };
+		F5A3CF2C2CB31ACA00EC5325 /* TimeInterval+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A3CF2B2CB31AC500EC5325 /* TimeInterval+Extensions.swift */; };
 		F5A5E1162CAF4BCB00830E22 /* VoiceNoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5E1142CAF4BCB00830E22 /* VoiceNoteApp.swift */; };
 		F5A5E1172CAF4BCB00830E22 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5E10F2CAF4BCB00830E22 /* MainView.swift */; };
 		F5A5E1182CAF4BCB00830E22 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5A5E10D2CAF4BCB00830E22 /* Preview Assets.xcassets */; };
 		F5A5E1192CAF4BCB00830E22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5A5E1122CAF4BCB00830E22 /* Assets.xcassets */; };
-		F5A5E11D2CAF59ED00830E22 /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5E11C2CAF59E800830E22 /* NoteModel.swift */; };
-		F5A5E11F2CAF5A3200830E22 /* NoteCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5E11E2CAF5A2C00830E22 /* NoteCategory.swift */; };
 		F5A5E1222CAF5CB500830E22 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5E1212CAF5CB200830E22 /* NoteView.swift */; };
+		F5A6101F2CC3A73800C4A386 /* FileExportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A6101E2CC3A73100C4A386 /* FileExportManager.swift */; };
+		F5A610212CC3A93000C4A386 /* SharedFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A610202CC3A92E00C4A386 /* SharedFile.swift */; };
+		F5A610232CC3C44100C4A386 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A610222CC3C43D00C4A386 /* ActivityViewController.swift */; };
+		F5A610342CC4023E00C4A386 /* VoiceNote-Share.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F5A6102A2CC4023E00C4A386 /* VoiceNote-Share.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F5A610452CC4041C00C4A386 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A610442CC4041700C4A386 /* ShareView.swift */; };
+		F5A610462CC4058E00C4A386 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5E1212CAF5CB200830E22 /* NoteView.swift */; };
+		F5A610472CC405D500C4A386 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52ECFE82CBE58F6004E7704 /* AudioManager.swift */; };
+		F5A610492CC4068B00C4A386 /* PersistentConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A610482CC4067F00C4A386 /* PersistentConfigurator.swift */; };
+		F5A6104A2CC4069500C4A386 /* PersistentConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A610482CC4067F00C4A386 /* PersistentConfigurator.swift */; };
+		F5A6104B2CC40EF200C4A386 /* NoteData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F51C34092CBD7DCF005A92A2 /* NoteData.xcdatamodeld */; };
+		F5A6104C2CC40F6400C4A386 /* ASRModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51C34002CBD7D38005A92A2 /* ASRModel.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F5A610322CC4023E00C4A386 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5A5E0E52CAE30FF00830E22 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5A610292CC4023E00C4A386;
+			remoteInfo = "VoiceNote-Share";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F5A610392CC4023E00C4A386 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F5A610342CC4023E00C4A386 /* VoiceNote-Share.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		F515F7F22CB3438B008A6669 /* ASRError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASRError.swift; sourceTree = "<group>"; };
+		F50E4CE72CC52BA200BBBE73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F515F81E2CB37F45008A6669 /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
+		F515F8232CB38568008A6669 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		F51C33FF2CBD7D38005A92A2 /* ASRError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASRError.swift; sourceTree = "<group>"; };
+		F51C34002CBD7D38005A92A2 /* ASRModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASRModel.swift; sourceTree = "<group>"; };
+		F51C34012CBD7D38005A92A2 /* ASRResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASRResult.swift; sourceTree = "<group>"; };
+		F51C340A2CBD7DCF005A92A2 /* NoteData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NoteData.xcdatamodel; sourceTree = "<group>"; };
+		F51C340C2CBD8025005A92A2 /* NotesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesManager.swift; sourceTree = "<group>"; };
+		F52ECFE82CBE58F6004E7704 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		F52ECFEB2CBE6CA5004E7704 /* FolderCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCreateView.swift; sourceTree = "<group>"; };
+		F52ECFED2CBE7AD2004E7704 /* FolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderView.swift; sourceTree = "<group>"; };
+		F52ECFF02CBE99B3004E7704 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		F56048812CC44A460001A448 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		F574E7872CB3B0EB000BF597 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		F59EF7962CBFB6F600B3E307 /* AddNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotesView.swift; sourceTree = "<group>"; };
 		F5A3CF162CB06D5300EC5325 /* NoteHighlightsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteHighlightsModel.swift; sourceTree = "<group>"; };
 		F5A3CF1B2CB0873400EC5325 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
-		F5A3CF1F2CB0910200EC5325 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		F5A3CF212CB0AD0400EC5325 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		F5A3CF272CB0AE3C00EC5325 /* ASRModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASRModel.swift; sourceTree = "<group>"; };
-		F5A3CF2B2CB31AC500EC5325 /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
+		F5A3CF2B2CB31AC500EC5325 /* TimeInterval+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Extensions.swift"; sourceTree = "<group>"; };
 		F5A5E0ED2CAE30FF00830E22 /* VoiceNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5A5E10D2CAF4BCB00830E22 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F5A5E10F2CAF4BCB00830E22 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F5A5E1122CAF4BCB00830E22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5A5E1132CAF4BCB00830E22 /* VoiceNote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VoiceNote.entitlements; sourceTree = "<group>"; };
 		F5A5E1142CAF4BCB00830E22 /* VoiceNoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceNoteApp.swift; sourceTree = "<group>"; };
-		F5A5E11C2CAF59E800830E22 /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
-		F5A5E11E2CAF5A2C00830E22 /* NoteCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCategory.swift; sourceTree = "<group>"; };
 		F5A5E1212CAF5CB200830E22 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
+		F5A6101E2CC3A73100C4A386 /* FileExportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileExportManager.swift; sourceTree = "<group>"; };
+		F5A610202CC3A92E00C4A386 /* SharedFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedFile.swift; sourceTree = "<group>"; };
+		F5A610222CC3C43D00C4A386 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		F5A6102A2CC4023E00C4A386 /* VoiceNote-Share.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "VoiceNote-Share.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5A6103B2CC4033D00C4A386 /* Extension-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Extension-Info.plist"; sourceTree = "<group>"; };
+		F5A6103F2CC4033D00C4A386 /* VoiceNote-Share.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "VoiceNote-Share.entitlements"; sourceTree = "<group>"; };
+		F5A610442CC4041700C4A386 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
+		F5A610482CC4067F00C4A386 /* PersistentConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,12 +119,95 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F5A610272CC4023E00C4A386 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F50E4CE92CC66A0D00BBBE73 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F5A5E1132CAF4BCB00830E22 /* VoiceNote.entitlements */,
+				F5A5E1142CAF4BCB00830E22 /* VoiceNoteApp.swift */,
+				F50E4CE72CC52BA200BBBE73 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F50E4CEA2CC66A4C00BBBE73 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				F5A5E1122CAF4BCB00830E22 /* Assets.xcassets */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		F515F8222CB3855E008A6669 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F574E7872CB3B0EB000BF597 /* Int+Extensions.swift */,
+				F515F8232CB38568008A6669 /* Array+Extension.swift */,
+				F5A3CF2B2CB31AC500EC5325 /* TimeInterval+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F51C34022CBD7D38005A92A2 /* ASR */ = {
+			isa = PBXGroup;
+			children = (
+				F51C33FF2CBD7D38005A92A2 /* ASRError.swift */,
+				F51C34002CBD7D38005A92A2 /* ASRModel.swift */,
+				F51C34012CBD7D38005A92A2 /* ASRResult.swift */,
+			);
+			path = ASR;
+			sourceTree = "<group>";
+		};
+		F51C34032CBD7D38005A92A2 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F51C340C2CBD8025005A92A2 /* NotesManager.swift */,
+				F5A610482CC4067F00C4A386 /* PersistentConfigurator.swift */,
+				F51C34092CBD7DCF005A92A2 /* NoteData.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		F52ECFE72CBE58EC004E7704 /* AudioManager */ = {
+			isa = PBXGroup;
+			children = (
+				F52ECFE82CBE58F6004E7704 /* AudioManager.swift */,
+			);
+			path = AudioManager;
+			sourceTree = "<group>";
+		};
+		F52ECFEA2CBE6C94004E7704 /* Folder */ = {
+			isa = PBXGroup;
+			children = (
+				F59EF7962CBFB6F600B3E307 /* AddNotesView.swift */,
+				F52ECFED2CBE7AD2004E7704 /* FolderView.swift */,
+				F52ECFEB2CBE6CA5004E7704 /* FolderCreateView.swift */,
+			);
+			path = Folder;
+			sourceTree = "<group>";
+		};
+		F52ECFEF2CBE99AD004E7704 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				F52ECFF02CBE99B3004E7704 /* CustomTextField.swift */,
+				F5A610222CC3C43D00C4A386 /* ActivityViewController.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		F5A3CF1A2CB0872E00EC5325 /* Record */ = {
 			isa = PBXGroup;
 			children = (
+				F515F81E2CB37F45008A6669 /* TimePicker.swift */,
 				F5A3CF1B2CB0873400EC5325 /* RecordView.swift */,
 			);
 			path = Record;
@@ -63,7 +216,10 @@
 		F5A3CF262CB0AE3500EC5325 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F5A3CF272CB0AE3C00EC5325 /* ASRModel.swift */,
+				F5A6101D2CC3A71900C4A386 /* FileExportManager */,
+				F52ECFE72CBE58EC004E7704 /* AudioManager */,
+				F51C34022CBD7D38005A92A2 /* ASR */,
+				F51C34032CBD7D38005A92A2 /* CoreData */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -71,6 +227,7 @@
 		F5A5E0E42CAE30FF00830E22 = {
 			isa = PBXGroup;
 			children = (
+				F5A610402CC4033D00C4A386 /* VoiceNote-Share */,
 				F5A5E1152CAF4BCB00830E22 /* VoiceNote */,
 				F5A5E0EE2CAE30FF00830E22 /* Products */,
 			);
@@ -80,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				F5A5E0ED2CAE30FF00830E22 /* VoiceNote.app */,
+				F5A6102A2CC4023E00C4A386 /* VoiceNote-Share.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,12 +245,9 @@
 		F5A5E10C2CAF4BCB00830E22 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				F515F7F22CB3438B008A6669 /* ASRError.swift */,
-				F5A3CF2B2CB31AC500EC5325 /* TimeFormatter.swift */,
-				F5A3CF1F2CB0910200EC5325 /* Route.swift */,
+				F52ECFEF2CBE99AD004E7704 /* UIKit */,
+				F515F8222CB3855E008A6669 /* Extensions */,
 				F5A3CF162CB06D5300EC5325 /* NoteHighlightsModel.swift */,
-				F5A5E11E2CAF5A2C00830E22 /* NoteCategory.swift */,
-				F5A5E11C2CAF59E800830E22 /* NoteModel.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -116,6 +271,7 @@
 		F5A5E1112CAF4BCB00830E22 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				F52ECFEA2CBE6C94004E7704 /* Folder */,
 				F5A3CF1A2CB0872E00EC5325 /* Record */,
 				F5A5E1202CAF5CAC00830E22 /* Note */,
 				F5A5E1102CAF4BCB00830E22 /* Main */,
@@ -126,14 +282,13 @@
 		F5A5E1152CAF4BCB00830E22 /* VoiceNote */ = {
 			isa = PBXGroup;
 			children = (
+				F50E4CEA2CC66A4C00BBBE73 /* Content */,
+				F5A5E1112CAF4BCB00830E22 /* Screens */,
+				F50E4CE92CC66A0D00BBBE73 /* App */,
 				F5A3CF262CB0AE3500EC5325 /* Models */,
 				F5A3CF212CB0AD0400EC5325 /* Info.plist */,
 				F5A5E10C2CAF4BCB00830E22 /* Common */,
 				F5A5E10E2CAF4BCB00830E22 /* Preview Content */,
-				F5A5E1112CAF4BCB00830E22 /* Screens */,
-				F5A5E1122CAF4BCB00830E22 /* Assets.xcassets */,
-				F5A5E1132CAF4BCB00830E22 /* VoiceNote.entitlements */,
-				F5A5E1142CAF4BCB00830E22 /* VoiceNoteApp.swift */,
 			);
 			path = VoiceNote;
 			sourceTree = "<group>";
@@ -146,6 +301,26 @@
 			path = Note;
 			sourceTree = "<group>";
 		};
+		F5A6101D2CC3A71900C4A386 /* FileExportManager */ = {
+			isa = PBXGroup;
+			children = (
+				F5A610202CC3A92E00C4A386 /* SharedFile.swift */,
+				F5A6101E2CC3A73100C4A386 /* FileExportManager.swift */,
+			);
+			path = FileExportManager;
+			sourceTree = "<group>";
+		};
+		F5A610402CC4033D00C4A386 /* VoiceNote-Share */ = {
+			isa = PBXGroup;
+			children = (
+				F56048812CC44A460001A448 /* ShareViewController.swift */,
+				F5A6103B2CC4033D00C4A386 /* Extension-Info.plist */,
+				F5A610442CC4041700C4A386 /* ShareView.swift */,
+				F5A6103F2CC4033D00C4A386 /* VoiceNote-Share.entitlements */,
+			);
+			path = "VoiceNote-Share";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -156,10 +331,12 @@
 				F5A5E0E92CAE30FF00830E22 /* Sources */,
 				F5A5E0EA2CAE30FF00830E22 /* Frameworks */,
 				F5A5E0EB2CAE30FF00830E22 /* Resources */,
+				F5A610392CC4023E00C4A386 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F5A610332CC4023E00C4A386 /* PBXTargetDependency */,
 			);
 			name = VoiceNote;
 			packageProductDependencies = (
@@ -167,6 +344,25 @@
 			productName = VoiceNote;
 			productReference = F5A5E0ED2CAE30FF00830E22 /* VoiceNote.app */;
 			productType = "com.apple.product-type.application";
+		};
+		F5A610292CC4023E00C4A386 /* VoiceNote-Share */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5A610362CC4023E00C4A386 /* Build configuration list for PBXNativeTarget "VoiceNote-Share" */;
+			buildPhases = (
+				F5A610262CC4023E00C4A386 /* Sources */,
+				F5A610272CC4023E00C4A386 /* Frameworks */,
+				F5A610282CC4023E00C4A386 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "VoiceNote-Share";
+			packageProductDependencies = (
+			);
+			productName = "VoiceNote-Share";
+			productReference = F5A6102A2CC4023E00C4A386 /* VoiceNote-Share.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -179,6 +375,9 @@
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					F5A5E0EC2CAE30FF00830E22 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					F5A610292CC4023E00C4A386 = {
 						CreatedOnToolsVersion = 16.0;
 					};
 				};
@@ -198,6 +397,7 @@
 			projectRoot = "";
 			targets = (
 				F5A5E0EC2CAE30FF00830E22 /* VoiceNote */,
+				F5A610292CC4023E00C4A386 /* VoiceNote-Share */,
 			);
 		};
 /* End PBXProject section */
@@ -212,6 +412,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F5A610282CC4023E00C4A386 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -219,21 +426,63 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F59EF7972CBFB6F600B3E307 /* AddNotesView.swift in Sources */,
 				F5A3CF172CB06D5C00EC5325 /* NoteHighlightsModel.swift in Sources */,
-				F5A5E11F2CAF5A3200830E22 /* NoteCategory.swift in Sources */,
+				F52ECFE92CBE58FB004E7704 /* AudioManager.swift in Sources */,
+				F5A6101F2CC3A73800C4A386 /* FileExportManager.swift in Sources */,
 				F5A5E1222CAF5CB500830E22 /* NoteView.swift in Sources */,
-				F5A3CF2C2CB31ACA00EC5325 /* TimeFormatter.swift in Sources */,
-				F515F7F32CB34392008A6669 /* ASRError.swift in Sources */,
+				F5A3CF2C2CB31ACA00EC5325 /* TimeInterval+Extensions.swift in Sources */,
 				F5A3CF1C2CB0873600EC5325 /* RecordView.swift in Sources */,
-				F5A5E11D2CAF59ED00830E22 /* NoteModel.swift in Sources */,
-				F5A3CF282CB0AE5400EC5325 /* ASRModel.swift in Sources */,
-				F5A3CF202CB0910700EC5325 /* Route.swift in Sources */,
+				F52ECFF12CBE99C9004E7704 /* CustomTextField.swift in Sources */,
+				F51C34042CBD7D38005A92A2 /* ASRModel.swift in Sources */,
+				F51C34052CBD7D38005A92A2 /* ASRResult.swift in Sources */,
+				F5A610492CC4068B00C4A386 /* PersistentConfigurator.swift in Sources */,
+				F51C34062CBD7D38005A92A2 /* ASRError.swift in Sources */,
+				F52ECFEE2CBE7AD6004E7704 /* FolderView.swift in Sources */,
+				F5A610212CC3A93000C4A386 /* SharedFile.swift in Sources */,
+				F574E7882CB3B0EF000BF597 /* Int+Extensions.swift in Sources */,
+				F5A610232CC3C44100C4A386 /* ActivityViewController.swift in Sources */,
+				F52ECFEC2CBE6CAB004E7704 /* FolderCreateView.swift in Sources */,
+				F515F81F2CB37F4B008A6669 /* TimePicker.swift in Sources */,
 				F5A5E1162CAF4BCB00830E22 /* VoiceNoteApp.swift in Sources */,
+				F51C340B2CBD7DCF005A92A2 /* NoteData.xcdatamodeld in Sources */,
+				F50E4CE82CC52BA500BBBE73 /* AppDelegate.swift in Sources */,
+				F515F8242CB3856E008A6669 /* Array+Extension.swift in Sources */,
 				F5A5E1172CAF4BCB00830E22 /* MainView.swift in Sources */,
+				F51C340D2CBD8035005A92A2 /* NotesManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5A610262CC4023E00C4A386 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F56048822CC44A460001A448 /* ShareViewController.swift in Sources */,
+				F5A610452CC4041C00C4A386 /* ShareView.swift in Sources */,
+				F560487A2CC413480001A448 /* FileExportManager.swift in Sources */,
+				F56048782CC413380001A448 /* NotesManager.swift in Sources */,
+				F560487F2CC416D40001A448 /* ASRResult.swift in Sources */,
+				F5A6104A2CC4069500C4A386 /* PersistentConfigurator.swift in Sources */,
+				F5A6104C2CC40F6400C4A386 /* ASRModel.swift in Sources */,
+				F560487C2CC4135A0001A448 /* NoteHighlightsModel.swift in Sources */,
+				F5A610472CC405D500C4A386 /* AudioManager.swift in Sources */,
+				F56048802CC416E40001A448 /* ASRError.swift in Sources */,
+				F5A610462CC4058E00C4A386 /* NoteView.swift in Sources */,
+				F5A6104B2CC40EF200C4A386 /* NoteData.xcdatamodeld in Sources */,
+				F56048792CC413400001A448 /* CustomTextField.swift in Sources */,
+				F560487B2CC413530001A448 /* ActivityViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F5A610332CC4023E00C4A386 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5A610292CC4023E00C4A386 /* VoiceNote-Share */;
+			targetProxy = F5A610322CC4023E00C4A386 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F5A5E0FA2CAE310100830E22 /* Debug */ = {
@@ -355,9 +604,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = VoiceNote/VoiceNote.entitlements;
+				CODE_SIGN_ENTITLEMENTS = VoiceNote/App/VoiceNote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"VoiceNote/Preview Content\"";
 				DEVELOPMENT_TEAM = G3332Q8MVD;
 				ENABLE_PREVIEWS = YES;
@@ -399,9 +648,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = VoiceNote/VoiceNote.entitlements;
+				CODE_SIGN_ENTITLEMENTS = VoiceNote/App/VoiceNote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"VoiceNote/Preview Content\"";
 				DEVELOPMENT_TEAM = G3332Q8MVD;
 				ENABLE_PREVIEWS = YES;
@@ -438,6 +687,71 @@
 			};
 			name = Release;
 		};
+		F5A610372CC4023E00C4A386 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "VoiceNote-Share/VoiceNote-Share.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G3332Q8MVD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "VoiceNote-Share/Extension-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "VoiceNote-Share";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "PavelKuznetsov.VoiceNote.VoiceNote-Share";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		F5A610382CC4023E00C4A386 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "VoiceNote-Share/VoiceNote-Share.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G3332Q8MVD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "VoiceNote-Share/Extension-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "VoiceNote-Share";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "PavelKuznetsov.VoiceNote.VoiceNote-Share";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -459,7 +773,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		F5A610362CC4023E00C4A386 /* Build configuration list for PBXNativeTarget "VoiceNote-Share" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5A610372CC4023E00C4A386 /* Debug */,
+				F5A610382CC4023E00C4A386 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F51C34092CBD7DCF005A92A2 /* NoteData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F51C340A2CBD7DCF005A92A2 /* NoteData.xcdatamodel */,
+			);
+			currentVersion = F51C340A2CBD7DCF005A92A2 /* NoteData.xcdatamodel */;
+			path = NoteData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F5A5E0E52CAE30FF00830E22 /* Project object */;
 }
