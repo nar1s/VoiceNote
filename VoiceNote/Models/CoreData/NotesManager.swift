@@ -92,6 +92,18 @@ final class NotesManager: ObservableObject {
             print("DEBUG: Failed initializePredefinedCategories(): \(error)")
         }
     }
+    
+    func fetchAllNotes() -> [Note] {
+        let fetchRequest: NSFetchRequest<Note> = Note.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "created", ascending: true)]
+        
+        do {
+            return try context.fetch(fetchRequest)
+        } catch {
+            print("DEBUG: Failed to fetch notes: \(error.localizedDescription)")
+            return []
+        }
+    }
 }
 
 // MARK: - Preview model

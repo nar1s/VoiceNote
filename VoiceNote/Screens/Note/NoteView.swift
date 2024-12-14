@@ -24,6 +24,8 @@ struct NoteView: View {
     @State private var isFocused: Bool = false
     @State private var isShareSheetPresented = false
     @State private var shareItems: [Any] = []
+    @State private var showAlert = false
+    @State private var alertMessage = ""
     var finishButtonAction: (() -> ())?
     
     // MARK: - Private properties
@@ -173,15 +175,42 @@ struct NoteView: View {
             guard let filePath = noteModel.relativeFilePath else { return }
             audioManager.configureAudioPlayer(with: filePath)
         }
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("Ошибка"), message: Text(alertMessage), dismissButton: .default(Text("ОК")))
+        }
     }
     
     private func playPauseAudio() {
         audioManager.playPauseAudio()
     }
+    
+    private func generateUniqueTitle(baseTitle: String) -> String {
+        var uniqueTitle = baseTitle
+        var counter = 1
+
+        // Получаем все существующие названия заметок
+        let existingTitles = notesManager.fetchAllNotes().compactMap { $0.name }
+
+        // Проверяем, есть ли совпадения, и добавляем суффикс "(n)", пока не будет уникального названия
+        while existingTitles.contains(uniqueTitle) {
+            uniqueTitle = "\(baseTitle) (\(counter))"
+            counter += 1
+        }
+
+        return uniqueTitle
+    }
 
     private func saveNoteToStorage() {
+        guard !noteTitle.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+                alertMessage = "Название заметки не может быть пустым."
+                showAlert = true
+                return
+        }
+        
+        let uniqueTitle = generateUniqueTitle(baseTitle: noteTitle)
+        
         noteModel.text = noteText
-        noteModel.name = noteTitle
+        noteModel.name = uniqueTitle
         noteModel.category = categories.first(where: { $0.name == selectedCategory })
         notesManager.save()
     }
